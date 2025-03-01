@@ -40,7 +40,7 @@
         for (let i=0; i<list.length; i++) {
             totalSum += list[i];
             // amount of rectangles = b-a = finalTime-initialTime (ms)
-            xVelocityData.push((((totalTime))/list.length) * (list[i]));
+            xVelocityData.push((((totalTime))/(list.length)/1000) * (list[i]));
         }
 
         xVelocity = (list.length/totalTime) * (totalSum);
@@ -49,7 +49,7 @@
 
 
     function getDistance(list, totalTime) {
-        divider = totalTime/list.length
+        divider = totalTime/list.length/1000;
         
         let totalSum = 0;
         for (let i=0; i<list.length; i++) {
@@ -57,7 +57,7 @@
         }
 
 
-        return (totalTime/(list.length)) * (totalSum);
+        return (totalTime/(list.length*10)/1000) * (totalSum);
     }
 
 
@@ -133,6 +133,7 @@
     <p class="">Displacement: {totalDisplacement}</p>
     Dividing amt: {divider} 
     Interval: {interval}
+    Time Elapsed: {timeElapsed}
 
 
 </div>
