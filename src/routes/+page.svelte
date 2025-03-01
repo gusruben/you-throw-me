@@ -15,7 +15,7 @@
 
 
 
-    
+    let highestDisplacement = 0;
     let isOnGround = false;
     let marginCheck = 0;
     let initialTime = Date.now();
@@ -40,7 +40,7 @@
         for (let i=0; i<list.length; i++) {
             totalSum += list[i];
             // amount of rectangles = b-a = finalTime-initialTime (ms)
-            xVelocityData.push((((totalTime))/(list.length)/1000) * (list[i]));
+            xVelocityData.push((((totalTime*0.001))/(list.length)) * (list[i]));
         }
 
         xVelocity = (list.length/totalTime) * (totalSum);
@@ -49,7 +49,7 @@
 
 
     function getDistance(list, totalTime) {
-        divider = totalTime/list.length/1000;
+        divider = (totalTime*0.001)/list.length;
         
         let totalSum = 0;
         for (let i=0; i<list.length; i++) {
@@ -57,7 +57,7 @@
         }
 
 
-        return (totalTime/(list.length*10)/1000) * (totalSum);
+        return ((totalTime*0.001)/(list.length*10)) * (totalSum);
     }
 
 
@@ -85,8 +85,12 @@
                 const xVelocityData = LRAM(xData, timeElapsed);
 
                 totalDisplacement = getDistance(xVelocityData, timeElapsed);
+                if (totalDisplacement > highestDisplacement) {
+                    highestDisplacement = totalDisplacement;
+                }
                 xData = [];
                 yData = [];
+                initialTime = Date.now();
 
             }
 
@@ -134,6 +138,7 @@
     Dividing amt: {divider} 
     Interval: {interval}
     Time Elapsed: {timeElapsed}
+    Highest recent displacement: {highestDisplacement}
 
 
 </div>
