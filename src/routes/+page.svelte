@@ -22,31 +22,42 @@
     let timeElapsed = 0;
     let makeScreenRed = false;
     let xVelocity = 0;
+    
+
+    let divider = 0;
+
+    let interval = 0;
+
+    
 
 
 
-
-    function LRAM(list, amountOfRectangles=timeElapsed) {
+    // amountOfRectangles reprsents the interval of each datapoint
+    function LRAM(list, totalTime) {
+        
         let totalSum = 0;
         let xVelocityData = [];
         for (let i=0; i<list.length; i++) {
             totalSum += list[i];
-            xVelocityData.push((list.length/amountOfRectangles) * (list[i]));
+            // amount of rectangles = b-a = finalTime-initialTime (ms)
+            xVelocityData.push((((totalTime))/list.length) * (list[i]));
         }
 
-        xVelocity = (list.length/amountOfRectangles) * (totalSum);
+        xVelocity = (list.length/totalTime) * (totalSum);
         return xVelocityData;
     }
 
 
-    function getDistance(list, amountOfRectangles=timeElapsed) {
+    function getDistance(list, totalTime) {
+        divider = totalTime/list.length
+        
         let totalSum = 0;
         for (let i=0; i<list.length; i++) {
             totalSum += list[i];
         }
 
 
-        return (list.length/amountOfRectangles) * (totalSum);
+        return (totalTime/(list.length)) * (totalSum);
     }
 
 
@@ -55,6 +66,7 @@
         // Assume on the ground when z=9.8 or so
     
         window.addEventListener("devicemotion", (event) => {
+            interval = event.interval;
             x = event.accelerationIncludingGravity.x;
             y = event.accelerationIncludingGravity.y;
 
@@ -119,6 +131,8 @@
     <p class="">Z Coordinate:  {z} </p>
     <p class="">Is on ground: {isOnGround}</p>
     <p class="">Displacement: {totalDisplacement}</p>
+    Dividing amt: {divider} 
+    Interval: {interval}
 
 
 </div>
