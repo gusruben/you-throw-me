@@ -2,16 +2,29 @@
 
 
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: dark --default;
+}
 
 
 
 .font-1 {
-    font-family: "Liter", serif;
+    font-family: "VT323", serif;
 }
 
 .font-2 {
-    font-family: "Inter", serif;
+    font-family: "VT323", serif;
+}
+
+@font-face {
+	font-family: 'VT323';
+	src: url('/VT323-Regular.ttf') format('ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.font-bm {
+  font-family: "VT323", regular;
 }
 
 .ping {

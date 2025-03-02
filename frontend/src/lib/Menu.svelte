@@ -6,7 +6,6 @@
 
 </script>
 
-<Navbar />
 <div class="hero h-[80vh]">
     <p>
     

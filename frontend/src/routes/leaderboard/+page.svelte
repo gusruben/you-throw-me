@@ -6,9 +6,6 @@
 </script>
 <div>
 
-    <Navbar />
-
-
     <div class="p-2 bg-base-300">
         <p class="font-1 text-2xl font-bold ">Leaderboard</p>
 

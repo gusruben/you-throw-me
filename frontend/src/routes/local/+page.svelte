@@ -80,8 +80,6 @@
     };
 </script>
 
-<Navbar />
-
 <div class="fixed top-0 w-full left-0 bg-base-300">
     <div class="text-center font-1 mx-auto w-fit items-center p-2 bg-base-300 flex flex-row gap-4">
         <div class="flex flex-row items-center gap-2 align-center">
@@ -142,7 +140,7 @@
                 {#if askForName}
                     <div class="px-8 py-4 bg-base-300 flex flex-col gap-2 w-full text-center rounded-box">
                         <p class="font-2">
-                            <span class="text-xl font-bold">Congrats!</span><br />You're on the leaderboard
+                            <span class="text-xl font-bold">Congrats!</span><br />You're on the leaderboard. Bring out the fine wine.
                         </p>
                         <input
                             bind:value={name}

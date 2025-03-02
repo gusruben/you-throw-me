@@ -23,6 +23,8 @@
     let buttonClicked = false;
     let time = 4;
     let done = false;
+
+    export let totalSpin = 0;
     
     const dispatch = createEventDispatcher();
     
@@ -63,6 +65,8 @@
 
     onMount(async () => {
         const handleDeviceMotion = (event) => {
+            totalSpin += Math.abs(event.rotationRate.alpha) + Math.abs(event.rotationRate.beta) + Math.abs(event.rotationRate.gamma)
+
             x = event.acceleration.x.toFixed(2) + storedErrorX;
             y = event.acceleration.y.toFixed(2) + storedErrorY;
             xData.push(x);
@@ -146,10 +150,10 @@
     <p class="font-1 font-bold text-6xl">{turnText}</p>
     
     {#if time === 4}
-        <p class="font-1 text-lg">Get ready to throw...</p>
+        <p class="font-1 text-xl">Did you stretch properly?</p>
         {#if !buttonClicked}
-            <button class="btn btn-primary font-2 btn-lg animate-bounce" on:click={startTimer}>
-                Start throw
+            <button class="btn btn-primary font-2 btn-lg bg-[#1a1a1a] border-[#4f4f4f] animate-bounce" on:click={startTimer}>
+                THROW THAT PHONE, YOU OAF
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -168,7 +172,7 @@
                 class="btn btn-primary btn-disabled font-2 btn-lg"
                 aria-disabled="true"
             >
-                Start throw
+                CHUCK IT LIKE YOUR EX TEXTED
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -192,9 +196,9 @@
     {/if}
 
     {#if time === 0 && highestDisplacement === 0}
-        <div class="fixed top-0 left-0 bg-error opacity-95 animate-pulse h-screen w-full"></div>
+        <div class="fixed top-0 left-0 bg-[] opacity-95 animate-pulse h-screen w-full"></div>
         <div class="">
-            <p class="text-center font-1 font-bold text-4xl text-error">Throw now</p>
+            <p class="text-center font-1 font-bold text-4xl text-error">TOSS IT</p>
 
             <div class="rounded-box bg-base-200 p-4 mt-4 text-lg font-medium text-base-content">
                 <div class="font-2">
@@ -207,7 +211,7 @@
     {#if highestDisplacement !== 0}
         <div class="text-center">
             <p class="font-1 text-xl">
-                You're an ape. You got <span>{highestDisplacement.toFixed(2)}</span> points
+                Congrats, you ape. You got <span>{highestDisplacement.toFixed(2)}</span> points. Proud of yourself?
             </p>
         </div>
     {/if}
