@@ -91,7 +91,7 @@
         console.log(e)
         iveThrown = true;
         document.body.style.backgroundImage = 'url("/grid.apng")';
-        myScore = processScore(e.detail.score);
+        myScore = processScore(e.detail.score,1,1,1);
 		socket.emit(`player-${playerOne ? 'one' : 'two'}-throw`, lobbyCode, myScore);
 	}
 </script>

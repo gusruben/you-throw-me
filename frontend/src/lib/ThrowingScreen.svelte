@@ -1,5 +1,6 @@
 <script>
-    import { onMount, createEventDispatcher } from 'svelte';
+	import { processScore } from '$lib/utils';
+    import { onMount, createEventDispatcher } from 'svelte'
     
     export let turnText = "Your Turn"; // default text to display
     export let bottomText = null;
@@ -147,7 +148,7 @@
 </script>
 
 <div class="hero-content flex-col">
-    <p class="font-1 font-bold text-6xl">{turnText}</p>
+    <p class="font-1 font-bold text-6xl text-center">{turnText}</p>
     
     {#if time === 4}
         <p class="font-1 text-xl">Did you stretch properly?</p>
@@ -211,7 +212,7 @@
     {#if highestDisplacement !== 0}
         <div class="text-center">
             <p class="font-1 text-xl">
-                Congrats, you ape. You got <span>{highestDisplacement.toFixed(2)}</span> points. Proud of yourself?
+                Congrats, you ape. You got <span>{processScore(highestDisplacement,1,1,1)}</span> points. Proud of yourself?
             </p>
         </div>
     {/if}

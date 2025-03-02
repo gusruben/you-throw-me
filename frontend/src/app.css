@@ -11,6 +11,9 @@
 .font-1 {
     font-family: "VT323", serif;
 }
+* {
+  font-family: "VT323", serif;
+}
 
 .font-2 {
     font-family: "VT323", serif;
