@@ -2,16 +2,32 @@
     import Navbar from "$lib/Navbar.svelte";
 	import { onMount } from "svelte";
     import { goto } from "$app/navigation";
+    import { io } from "socket.io-client";
+
 
     let lobbyCodeInput;
+    let socket;
 
-    let lobbyCode = "LA3N9";
+    let userID = Date.now().toString(36);
+
+    let lobbyCode = null;
     let waiting = true;
     
-    let url = "https://youthrow.me/lobby?code=" + lobbyCode // temporary URL until the page loads
+    let url = "Loading...";
 
     onMount(() => {
-        url = window.location.origin + "/lobby?code=" + lobbyCode
+        socket = io("wss://bore.gus.ink:443");
+
+        lobbyCode = (new URLSearchParams(window.location.search)).get("lobby")
+        if (lobbyCode) { // if joining an existing lobby
+
+        } else { // otherwise, create a new lobby
+            socket.emit("create", userID);
+            socket.on("session-created", code => {
+                lobbyCode = code;
+                url = window.location.origin + "/lobby?code=" + lobbyCode;
+        });
+        }
     })
 </script>
 
@@ -26,7 +42,11 @@
         </div>
         <p class="divider font-1">OR</p>
         <p class="text-4xl font-bold font-1 p-2">Create a Lobby</p>
-        <img class="w-70 h-70 bg-base-content mix-blend-lighten" src={`https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=url`} alt={`url`}>
+        {#if lobbyCode}
+            <img class="w-70 h-70 bg-base-content mix-blend-lighten" src={`https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=url`} alt={`url`}>
+        {:else}
+            <div class="w-70 h-70 bg-base-content animate-pulse"></div> 
+        {/if}
         <div class="flex flex-row gap-2 w-full">
             <input type="text" value={url} class="bg-base-300 p-3 flex-1" readonly>
             <button class="btn btn-primary flex-1" on:click={() => navigator.share({ url })}>Share</button>
