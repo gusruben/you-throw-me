@@ -24,6 +24,7 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
-		"kalmanjs": "^1.1.0"
+		"kalmanjs": "^1.1.0",
+		"svelte-fast-marquee": "^0.8.0"
 	}
 }

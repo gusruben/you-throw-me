@@ -1,61 +1,7 @@
 <script>
     import Navbar from "$lib/Navbar.svelte";
 
-    const leaderboard = [
-        {
-            name: "Carlos",
-            distance: 59.40,
-            rank: 1,
-        },
-        {
-            name: "Ben",
-            distance: 52.40,
-            rank: 2,
-        },
-        {
-            name: "Asher",
-            distance:41.40,
-            rank: 3,
-        },
-        {
-            name: "Deni",
-            distance: 30.40,
-            rank: 4,
-        },
-        {
-            name: "Gen",
-            distance: 2.40,
-            rank: 5,
-        },
-        {
-            name: "Gen",
-            distance: 2.40,
-            rank: 6,
-        },
-        {
-            name: "Gen",
-            distance: 2.40,
-            rank: 7,
-        },
-        {
-            name: "Gen",
-            distance: 2.40,
-            rank: 8,
-        },
-        {
-            name: "Gen",
-            distance: 2.40,
-            rank: 9,
-        },
-        {
-            name: "Gen",
-            distance: 2.40,
-            rank: 10,
-        },
-
-    ];
-
-
+    let { data } = $props();
 
 </script>
 <div>
@@ -67,11 +13,23 @@
         <p class="font-1 text-2xl font-bold ">Leaderboard</p>
 
     </div>
-    <div class="overflow-y-auto list h-[80vh]">
+    <div class="overflow-y-auto list h-[75vh]">
         
-        {#each leaderboard as item}
+        {#each data.leaderboard as item, i}
             <div class="list-row">
-                <p class="text-4xl tabular-nums font-extrabold font-2">{item.rank}</p>
+                {#if i<=2}
+
+                <p class="text-4xl tabular-nums font-extrabold font-2 text-yellow-500 p-2 rounded-full">{i+1}</p>
+
+                {/if}
+
+                {#if i>2}
+
+                <p class="text-4xl tabular-nums font-extrabold font-2  p-2 ">{i+1}</p>
+
+                {/if}
+                
+             
                 <div class="list-col-grow flex flex-row items-center">
                     <p class="font-1 text-3xl">{item.name}</p>
 
@@ -79,7 +37,7 @@
                 
                 <div class="flex flex-row items-center">
                     <div class="badge badge-primary font-1">
-                        {item.distance} meters
+                        {item.score.toFixed(2)} points
                     </div>
                 </div>
                
@@ -91,9 +49,6 @@
         
 
     </div>
-
-
-
 
 
 </div>

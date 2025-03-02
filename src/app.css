@@ -13,3 +13,36 @@
 .font-2 {
     font-family: "Inter", serif;
 }
+
+.ping {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+ /* Light blue overlay */
+  }
+
+  .ping::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+    animation: ping 50ms linear infinite;
+  }
+
+  @keyframes ping {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.5);
+      opacity: 0;
+    }
+  }
