@@ -13,6 +13,10 @@ Are you an empty-headed beast that blindly follows the fraudulent theories of "D
 There's even a solo leaderboard so you can boast to every other dumb beast on the planet just how good you are at brutishly launching your phone with reckless abandon. Don't worry about the fact you had to pay for that thing; raw, natural competition is clearly much more important.
 
 ---
+# I Hate Money and Love Winning. How Do I Play?
+
+Our app is a progressive web app built in Svelte and decorated with Tailwind, with a backend utilizing Socket.io for server communication. It'd be easy to host yourself, using npm and reconfiguring to run on localhost. But if you don't wanna go through all the hassle, you can find it hosted at [https://youthrow.me](https://youthrow.me). The game is pretty self-explanatory in its usage - go to the home page, select the mode you wanna play, and either make a session that your friend can join or share the phone with your friend. More features may or may not be coming soon; like any good capitalists, we confine ourselves to no promises.
+---
 
 # So What's This Good For?
 
