@@ -8,10 +8,10 @@
     let lobbyCodeInput;
     let socket;
 
-    let userID = Date.now().toString(36);
+    let userID = Math.random().toString(36).slice(2);
 
     let lobbyCode = null;
-    let waiting = true;
+    let playerOne; // true if you're creating the lobby, false if you're joining
     
     let url = "Loading...";
 
@@ -20,14 +20,25 @@
 
         lobbyCode = (new URLSearchParams(window.location.search)).get("lobby")
         if (lobbyCode) { // if joining an existing lobby
-
+            playerOne = false;
+            socket.emit("join", userID, lobbyCode);
         } else { // otherwise, create a new lobby
+            playerOne = true;
             socket.emit("create", userID);
             socket.on("session-created", code => {
                 lobbyCode = code;
                 url = window.location.origin + "/lobby?code=" + lobbyCode;
-        });
+            });
         }
+
+        socket.on("error", message => {
+            alert("Received Error From Server!", message)
+        })
+        socket.on("other-player-threw", score => {
+            console.log("Other player threw! Their score:", score)
+        })
+
+        
     })
 </script>
 
