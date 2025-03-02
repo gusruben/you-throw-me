@@ -28,8 +28,8 @@
 	let bottomStatusText = null;
 
 	onMount(() => {
-		// socket = io("wss://server.youthrow.me:443");
-		socket = io("wss://bore.gus.ink:443");
+		socket = io("wss://server.youthrow.me:443");
+		// socket = io("wss://bore.gus.ink:443");
 
 		lobbyCode = new URLSearchParams(window.location.search).get('code');
 		let rematchCode = new URLSearchParams(window.location.search).get('rematch');
