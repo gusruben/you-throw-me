@@ -20,7 +20,7 @@ Our app is a progressive web app built in Svelte and decorated with Tailwind, wi
 
 ---
 
-# So What's This Good For?
+# So, What's This Good For?
 
 Well, to be blunt, breaking phones. Certainly, you must have a busted old Android lying in a sock drawer somewhere you won't miss. But I'm sure you could also use it to test your accelerometer in a controlled environment! Get a lot of cushions. And hey, this is Scrapyard, the point is that it's useless. Why are you so convinced that everything needs to have a purpose anyways? Get your head out of your ass. Make stupid shit for the sake of making it. We did, and we had an absolute blast doing it.
 
