@@ -1,0 +1,2 @@
+# Chuck That Thang Like A 15th Century Siege Weapon
+Violence is an indelible element of the human spirit. No matter how much we try to socialize and condition ourselves to an imposed pacifism, the law of the jungle will always be inscribed on our bones. The proof is in the surges and swings of everyday irritants, in that clenched jaw you use to deal with your coworker bothering you for the last **goddamn** time.  
