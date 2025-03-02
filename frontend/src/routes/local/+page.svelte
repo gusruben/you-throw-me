@@ -1,6 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import ThrowingScreen from '$lib/ThrowingScreen.svelte';
+	import Navbar from '$lib/Navbar.svelte';
 
     let gameStats = {
         playerOne: 0,
@@ -79,6 +80,8 @@
     };
 </script>
 
+<Navbar />
+
 <div class="fixed top-0 w-full left-0 bg-base-300">
     <div class="text-center font-1 mx-auto w-fit items-center p-2 bg-base-300 flex flex-row gap-4">
         <div class="flex flex-row items-center gap-2 align-center">
@@ -93,7 +96,7 @@
     </div>
 </div>
 
-<div class="hero h-[70vh]">
+<div class="hero h-[90vh]">
     <div class="hero-content flex-col">
         {#if gameStats.playerOne > gameStats.playerTwo && gameStats.playerTwo !== 0}
             <div class="avatar avatar-placeholder border rounded-full relative">
@@ -154,7 +157,7 @@
                     </div>
                 {/if}
                 <div class="w-fit mx-auto">
-                    <a href="/game" class="btn btn-accent mt-2 btn-lg w-full font-1">
+                    <a href="/local" class="btn btn-accent mt-2 btn-lg w-full font-1">
                         Again?<svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"

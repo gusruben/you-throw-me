@@ -2,6 +2,7 @@
     import { onMount, createEventDispatcher } from 'svelte';
     
     export let turnText = "Your Turn"; // default text to display
+    export let bottomText = null;
     
     // throwing state stuff
     let x = 0;
@@ -21,6 +22,7 @@
     let timeElapsed = 0;
     let buttonClicked = false;
     let time = 4;
+    let done = false;
     
     const dispatch = createEventDispatcher();
     
@@ -70,6 +72,11 @@
 
             const marginOfError = 0.2;
 
+            // console.log(Date.now() - initialTime, done)
+            // if (Date.now() - initialTime >= 5000 + 5000 && !done) {
+            //     marginCheck = 5;
+            // }
+
             if (marginCheck > 4 && !isOnGround && startCounting) {
                 isOnGround = true;
 
@@ -79,13 +86,15 @@
 
                 totalDisplacement = Math.abs(getDistance(velocityData, timeElapsed));
 
-                if (highestDisplacement === 0) {
+                if (highestDisplacement === 0 || (Date.now() - initialTime >= 5000 && !done)) {
                     highestDisplacement = totalDisplacement;
                     
+                    console.log("FINISHING THROW", highestDisplacement)
                     // emit the score to the parent
                     dispatch('throwComplete', { score: highestDisplacement });
                     
                     startCounting = false;
+                    done = true;
                 }
             }
 
@@ -106,6 +115,8 @@
 
     const startTimer = () => {
         buttonClicked = true;
+        dispatch("throwPrimed");
+
         let interval = setInterval(() => {
             time -= 1;
             if (time <= 0) {
@@ -152,8 +163,7 @@
                     />
                 </svg>
             </button>
-        {/if}
-        {#if buttonClicked}
+        {:else}
             <button
                 class="btn btn-primary btn-disabled font-2 btn-lg"
                 aria-disabled="true"
@@ -200,5 +210,9 @@
                 You're an ape. You got <span>{highestDisplacement.toFixed(2)}</span> points
             </p>
         </div>
+    {/if}
+
+    {#if !buttonClicked && bottomText}
+        <p class="text-xl text-center w-full absolute bottom-[16vh]">{bottomText}</p>
     {/if}
 </div>
