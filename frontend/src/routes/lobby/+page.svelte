@@ -3,6 +3,7 @@
 	import { onMount } from "svelte";
     import { goto } from "$app/navigation";
     import { io } from "socket.io-client";
+    import { PUBLIC_SOCKETIO_SERVER } from "$env/static/public";
 
 
     let lobbyCodeInput;
@@ -16,7 +17,7 @@
     let url = "Loading...";
 
     onMount(() => {
-        socket = io("wss://bore.gus.ink:443");
+        socket = io(PUBLIC_SOCKETIO_SERVER);
 
         lobbyCode = (new URLSearchParams(window.location.search)).get("lobby")
         if (lobbyCode) { // if joining an existing lobby
