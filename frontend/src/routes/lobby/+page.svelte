@@ -2,7 +2,7 @@
 	import Navbar from '$lib/Navbar.svelte';
 	import { onMount } from 'svelte';
 	import { io } from 'socket.io-client';
-	import { PUBLIC_SOCKETIO_SERVER } from '$env/static/public';
+	// import { PUBLIC_SOCKETIO_SERVER } from '$env/static/public';
 	import ThrowingScreen from '$lib/ThrowingScreen.svelte';
 
 	let throwScreen; // throwing screen component
@@ -20,7 +20,7 @@
 	let bottomStatusText = null;
 
 	onMount(() => {
-		socket = io(PUBLIC_SOCKETIO_SERVER);
+		socket = io("wss://server.youthrow.me:443");
 
 		lobbyCode = new URLSearchParams(window.location.search).get('code');
 		if (lobbyCode) {
