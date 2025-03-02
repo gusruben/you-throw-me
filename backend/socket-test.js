@@ -7,7 +7,7 @@ class Session {
         this.playerOneScore = 0;
         this.playerTwoScore = 0;
         this.state = "waitingForPlayerTwo";
-        this.id = Math.random().toString(36).substring(2);
+        this.id = Date.now().toString(36).substring(2);
     }
     acceptSecondPlayer(player) {
         this.playerTwo = player;
@@ -32,9 +32,13 @@ class Session {
 
 const io = new Server(3000);
 
+let sessions = {};
+
 io.on('connection', (socket) => {
-    socket.emit("hello", "world");
-    socket.on("howdy", (msg) => {
-        console.log(msg);
+    socket.emit("Hi client!");
+    socket.on("Create", (user) => {
+        console.log("Starting session for user " + user);
+        let session = new Session(user);    // Create a new session with the initiating user as player one
+        sessions[session.id] = session;     // Store the session in the sessions dictionary, with the session id as its  
     });
 });
