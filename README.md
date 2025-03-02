@@ -1,3 +1,18 @@
+<div align="center">
+
+<img height="300" src="https://raw.githubusercontent.com/gusruben/you-throw-me/master/frontend/static/logoanim.gif" alt="YTM">
+
+<!-- for a divider line -->
+<h1 align="center">You Throw Me</h1>
+
+<!-- shields -->
+[![][contributors-shield]][contributors-link]
+[![][stars-shield]][stars-link]
+[![][issues-shield]][issues-link]
+[![][pulls-shield]][pulls-link]
+
+</div>
+
 # Chuck That Thang Like You're A 15th Century Siege Weapon
 
 Violence is an indelible element of the human spirit. No matter how much we try to socialize and condition ourselves to an imposed pacifism, the law of the jungle will always be inscribed on our bones. The proof is in the surges and swings of everyday irritants, in that clenched jaw you bear telling your coworker to for the last **goddamn** time to quit bothering you. Eventually, as with any other plaque that might build within the hearts of men, the pressure created becomes overwhelming - release must come about some way or another. So why not throw your phone like a complete fucking ape and enjoy watching numbers go up like an even stupider ape? Come on, your shriveled little dopamine receptors are begging for it.
@@ -32,3 +47,15 @@ Well, to be blunt, breaking phones. Certainly, you must have a busted old Androi
 **Gus Ruben** - *General Grand Programming Warlock and Seasoned Hackathon Conqueror* // [website](gus.ink)
 
 **Joaquin Schere** - *Supreme Jester, in charge of Overall Buffoonery and Back-end Fumbling* // [website](jschere.com)
+
+
+
+
+[contributors-shield]: https://img.shields.io/github/contributors/gusruben/you-throw-me?style=flat-square&labelColor=%23232529&color=%2326CB54
+[contributors-link]: https://github.com/gusruben/you-throw-me/graphs/contributors
+[stars-shield]: https://img.shields.io/github/stars/gusruben/you-throw-me?style=flat-square&labelColor=%23232529&color=%23F4EC61
+[stars-link]: ttps://github.com/gusruben/you-throw-me/stargazers
+[issues-shield]: https://img.shields.io/github/issues/gusruben/you-throw-me?style=flat-square&labelColor=%23232529&color=%23D73636
+[issues-link]: https://github.com/gusruben/you-throw-me/issues
+[pulls-shield]: https://img.shields.io/github/issues-pr/gusruben/you-throw-me?style=flat-square&labelColor=%23232529&color=%233995FF
+[pulls-link]: https://github.com/gusruben/you-throw-me/pulls
