@@ -1,6 +1,6 @@
 <div align="center">
 
-<img height="300" src="https://raw.githubusercontent.com/gusruben/you-throw-me/master/frontend/static/logoanim.gif" alt="YTM">
+<img height="300" src="https://raw.githubusercontent.com/gusruben/you-throw-me/refs/heads/master/frontend/static/logoanim.gif" alt="YTM">
 
 <!-- for a divider line -->
 <h1 align="center">You Throw Me</h1>
