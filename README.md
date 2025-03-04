@@ -51,8 +51,6 @@ Well, to be blunt, breaking phones. Certainly, you must have a busted old Androi
 
 *MADE FOR [HACK CLUB](https://hackclub.com)'S FLAGSHIP [SCRAPYARD](https://scrapyard.hackclub.com) EVENT BY*
 
-<img align="right" width="263" height="92" src="https://assets.hackclub.com/flag-standalone-wtransparent.png">
-
 **Sebastian Tavares** - *Super Master Front-End Genius and Licensed Svelte Wizard* // [website](https://xdagging.github.io)
 
 **Gus Ruben** - *General Grand Programming Warlock and Seasoned Hackathon Conqueror* // [website](https://gus.ink)
