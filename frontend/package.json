@@ -24,6 +24,7 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
+		"@humanspeak/svelte-markdown": "^0.7.19",
 		"@sveltejs/adapter-node": "^5.2.12",
 		"kalmanjs": "^1.1.0",
 		"socket.io": "^4.8.1",
