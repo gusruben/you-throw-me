@@ -10,7 +10,9 @@
 	<meta property="og:description" content="A mobile game about destroying expensive technology ">
 	<meta property="og:image" content="/logoanim.gif">
 	<meta property="og:url" content="https://youthrow.me">
-	<meta property="og:type" content="website">	
+	<meta property="og:type" content="website">
+
+	<title>You Throw Me</title>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
